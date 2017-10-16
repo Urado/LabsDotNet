@@ -7,3 +7,4 @@ D:\Repos\LabsDotNet\CalculatorLab\CalculatorTest\bin\Debug\ru\Microsoft.VisualSt
 D:\Repos\LabsDotNet\CalculatorLab\CalculatorTest\obj\Debug\CalculatorTest.csprojResolveAssemblyReference.cache
 D:\Repos\LabsDotNet\CalculatorLab\CalculatorTest\obj\Debug\CalculatorTest.dll
 D:\Repos\LabsDotNet\CalculatorLab\CalculatorTest\obj\Debug\CalculatorTest.pdb
+D:\Repos\LabsDotNet\CalculatorLab\CalculatorTest\bin\Debug\CalculatorLab.exe.config

@@ -45,11 +45,6 @@ namespace CalculatorLab
             _dotActive = true;
         }
 
-        public void Plus()
-        {
-
-        }
-
         public void Summation()
         {
 
