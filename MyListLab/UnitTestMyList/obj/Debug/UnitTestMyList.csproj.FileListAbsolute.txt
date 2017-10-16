@@ -1,0 +1,14 @@
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\UnitTestMyList.dll
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\UnitTestMyList.pdb
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\obj\Debug\UnitTestMyList.csprojResolveAssemblyReference.cache
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\obj\Debug\UnitTestMyList.dll
+c:\users\samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\obj\Debug\UnitTestMyList.pdb
+C:\Users\Samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\MyListLab.dll
+C:\Users\Samurai\documents\visual studio 2017\Projects\MyListLab\UnitTestMyList\bin\Debug\MyListLab.pdb
