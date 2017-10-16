@@ -6,9 +6,15 @@
         xmlns:local="clr-namespace:CalculatorLab"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="525">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+        </Style>
+    </Window.Resources>
     <Grid ShowGridLines="True" Background="Black">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -21,17 +27,21 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="Seven" Content="7" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Four" Content="4" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="One" Content="1" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Eite" Content="8" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Nine" Content="9" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Five" Content="5" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Two" Content="2" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Tree" Content="3" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Zero" Content="0" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Six" Content="6" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Width="90" Height="90"/>
-        <Button x:Name="Dot" Content="." HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" Width="90" Height="90"/>
 
+        <TextBox x:Name="Number" Text="0" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"/>
+
+        <Button x:Name="Seven" Content="7" Grid.Row="1" Grid.Column="0"/>
+        <Button x:Name="Four" Content="4" Grid.Row="2" Grid.Column="0"/>
+        <Button x:Name="One" Content="1" Grid.Row="3" Grid.Column="0"/>
+        <Button x:Name="Eite" Content="8" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="Nine" Content="9" Grid.Row="1" Grid.Column="2"/>
+        <Button x:Name="Five" Content="5" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="Two" Content="2" Grid.Row="3" Grid.Column="1"/>
+        <Button x:Name="Tree" Content="3" Grid.Row="3" Grid.Column="2"/>
+        <Button x:Name="Zero" Content="0"  Grid.Row="4" Grid.Column="1"/>
+        <Button x:Name="Six" Content="6" Grid.Row="2" Grid.Column="2"/>
+        <Button x:Name="Dot" Content="." Grid.Row="4" Grid.Column="0"/>
+        
+        <Button x:Name="Equality" Content="=" Grid.Row="4" Margin="5,5,5,5" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
     </Grid>
 </Window>

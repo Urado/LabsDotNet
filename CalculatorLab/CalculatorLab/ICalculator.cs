@@ -23,5 +23,7 @@ namespace CalculatorLab
         void Division();
 
         void Multiplication();
+
+        void Equality();
     }
 }

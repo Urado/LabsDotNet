@@ -69,5 +69,10 @@ namespace CalculatorLab
         {
 
         }
+
+        public void Equality()
+        {
+
+        }
     }
 }

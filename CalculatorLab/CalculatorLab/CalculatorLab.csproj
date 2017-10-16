@@ -63,6 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CalculatorLogic.cs" />
+    <Compile Include="ControllCalculator.cs" />
     <Compile Include="ICalculator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
