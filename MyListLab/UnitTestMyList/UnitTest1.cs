@@ -71,6 +71,8 @@ namespace UnitTestMyList
             Assert.IsTrue(myListInt.IndexOf(1) == 0);
             Assert.IsTrue(myListInt.IndexOf(11) == 10);
             Assert.IsTrue(myListInt.IndexOf(10) == 9);
+
+            Assert.IsTrue(myListInt.IndexOf(42) == -1);
         }
 
         [TestMethod]
@@ -129,7 +131,7 @@ namespace UnitTestMyList
         {
             var myListInt = new MyList<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             string listString = "";
-            foreach(var i in myListInt)
+            foreach (var i in myListInt)
             {
                 listString += i.ToString() + " ";
             }
@@ -138,12 +140,18 @@ namespace UnitTestMyList
             myListInt.Clear();
             listString = "";
 
-            foreach(var i in myListInt)
+            foreach (var i in myListInt)
             {
                 listString += i.ToString() + " ";
             }
 
             Assert.IsTrue("" == listString);
+        }
+
+        [TestMethod]
+        public void ErrorTest()
+        {
+            var myListInt = new MyList<int>() { 1, 2, 3 };
         }
     }
 }
