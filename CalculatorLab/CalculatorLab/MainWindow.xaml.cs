@@ -127,5 +127,29 @@ namespace CalculatorLab
             Calc.Multiplication();
             UpdateNumber();
         }
+
+        private void CEButton_Click(object sender, RoutedEventArgs e)
+        {
+            Calc.CE();
+            UpdateNumber();
+        }
+
+        private void CButton_Click(object sender, RoutedEventArgs e)
+        {
+            Calc.C();
+            UpdateNumber();
+        }
+
+        private void Sqrt_Click(object sender, RoutedEventArgs e)
+        {
+            Calc.Sqrt();
+            UpdateNumber();
+        }
+
+        private void Sign_Click(object sender, RoutedEventArgs e)
+        {
+            Calc.Sign();
+            UpdateNumber();
+        }
     }
 }

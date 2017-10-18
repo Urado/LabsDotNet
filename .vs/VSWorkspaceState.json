@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CalculatorLab"
+    "\\CalculatorLab",
+    "\\MyListLab"
   ],
-  "SelectedNode": "\\CalculatorLab\\CalculatorLab.sln",
+  "SelectedNode": "\\MyListLab\\MyListLab.sln",
   "PreviewInSolutionExplorer": false
 }

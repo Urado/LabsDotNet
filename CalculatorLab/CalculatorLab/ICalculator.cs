@@ -16,5 +16,9 @@ namespace CalculatorLab
         void Division();
         void Multiplication();
         void Equality();
+        void Sqrt();
+        void C();
+        void CE();
+        void Sign();
     }
 }

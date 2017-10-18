@@ -8,23 +8,59 @@ namespace CalculatorLab
 {
     public class CalculatorLogic : ICalculator
     {
-        public string NumberOnScreen { get { return _numberOnScreen.ToString(); } }
+        public string NumberOnScreen { get { return (_numberOnScreen*_sign).ToString("G10"); } }
 
-        private double _numberOnScreen=0;
+        private delegate double OperationDelegate(double x, double y);
 
-        private bool _dotActive=false;
+        private OperationDelegate Operation = Sum;
 
-        private int _stAfterDot=0;
+        private double _numberOnScreen = 0;
+
+        private double _tmpNumber = 0;
+
+        private int _sign = 1;
+
+        private bool _isSomethingInTmp = false;
+
+        private bool _isAnsver = false;
+
+        private bool _dotActive = false;
+
+        private int _stAfterDot = 0;
+
+        private void ClearTmp()
+        {
+            _isSomethingInTmp = false;
+        }
+
+        private void ToTmp(double numberToTmp)
+        {
+            _isSomethingInTmp = true;
+            _tmpNumber = numberToTmp;
+            _isAnsver = true;
+        }
 
         private void ClrearNumbOnScreen()
         {
+            _isAnsver = false;
             _dotActive = false;
             _numberOnScreen = 0;
             _stAfterDot = 0;
-        } 
+            _sign = 1;
+        }
+
+        private void DoOpetor()
+        {
+            _numberOnScreen = _isSomethingInTmp ? Operation(_tmpNumber, _numberOnScreen*_sign) : _numberOnScreen * _sign;
+            _sign = 1;
+            ToTmp(_numberOnScreen);
+
+        }
 
         public void TabNumber(int n)
         {
+            if (_isAnsver)
+                ClrearNumbOnScreen();
             if (n < 10 && n >= 0)
             {
                 if (!_dotActive)
@@ -35,39 +71,76 @@ namespace CalculatorLab
                 else
                 {
                     _stAfterDot++;
-                    _numberOnScreen += Math.Pow(10, -_stAfterDot)*n;
+                    _numberOnScreen += Math.Pow(10, -_stAfterDot) * n;
                 }
             }
         }
 
         public void DotActivate()
         {
+            if (_isAnsver)
+                ClrearNumbOnScreen();
             _dotActive = true;
         }
 
         public void Summation()
         {
-
+            Operation = Sum;
+            DoOpetor();
         }
 
         public void Subtraction()
         {
-
+            Operation = Sub;
+            DoOpetor();
         }
 
         public void Division()
         {
-
+            Operation = Div;
+            DoOpetor();
         }
 
         public void Multiplication()
         {
-
+            Operation = Mul;
+            DoOpetor();
         }
 
         public void Equality()
         {
-
+            DoOpetor();
+            ClearTmp();
         }
+
+        public void Sqrt()
+        {
+            _numberOnScreen = Math.Sqrt(_numberOnScreen);
+            _isAnsver = true;
+        }
+
+        public void C()
+        {
+            ClrearNumbOnScreen();
+        }
+
+        public void CE()
+        {
+            ClrearNumbOnScreen();
+            ClearTmp();
+        }
+
+        public void Sign()
+        {
+            _sign *= -1;
+        }
+
+        private static double Sum(double x, double y) => x + y;
+
+        private static double Mul(double x, double y) => x * y;
+
+        private static double Div(double x, double y) => x / y;
+
+        private static double Sub(double x, double y) => x - y;
     }
 }

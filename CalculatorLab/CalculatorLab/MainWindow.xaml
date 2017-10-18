@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculatorLab"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="525">
+        Title="MainWindow" Height="900" Width="600">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5" />
@@ -27,27 +27,33 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="Number" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" FontSize="80" TextAlignment="Right" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Number" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" FontSize="70" TextAlignment="Right" VerticalContentAlignment="Center"/>
         
-        <Button x:Name="Zero"  Grid.Row="4" Grid.Column="1" Content="0" Click="Zero_Click"/>
-        <Button x:Name="One" Grid.Row="3" Grid.Column="0" Content="1" Click="One_Click"/>
-        <Button x:Name="Two" Grid.Row="3" Grid.Column="1" Content="2" Click="Two_Click"/>
-        <Button x:Name="Three" Grid.Row="3" Grid.Column="2" Content="3" Click="Three_Click"/>
-        <Button x:Name="Four" Grid.Row="2" Grid.Column="0" Content="4" Click="Four_Click"/>
-        <Button x:Name="Five" Grid.Row="2" Grid.Column="1" Content="5" Click="Five_Click"/>
-        <Button x:Name="Six" Grid.Row="2" Grid.Column="2" Content="6" Click="Six_Click"/>
-        <Button x:Name="Seven" Grid.Row="1" Grid.Column="0" Content="7" Click="Seven_Click"/>
-        <Button x:Name="Eight" Grid.Row="1" Grid.Column="1" Content="8" Click="Eight_Click"/>
-        <Button x:Name="Nine" Grid.Row="1" Grid.Column="2" Content="9" Click="Nine_Click"/>
-        
-        <Button x:Name="Dot" Grid.Row="4" Grid.Column="0" Content="." Click="Dot_Click"/>
-        <Button x:Name="Equality" Grid.Row="4" Grid.Column="2" Content="=" Click="Equality_Click"/>
-        
-        <Button x:Name="Summation" Grid.Row="1" Grid.Column="3" Content="+" Click="Summation_Click"/>
-        <Button x:Name="Subtraction" Grid.Row="2" Grid.Column="3" Content="-" Click="Subtraction_Click"/>
-        <Button x:Name="Division" Grid.Row="3" Grid.Column="3" Content="/" Click="Division_Click"/>
-        <Button x:Name="Multiplication" Grid.Row="4" Grid.Column="3" Content="*" Click="Multiplication_Click"/>
+        <Button x:Name="Zero"  Grid.Row="5" Grid.Column="1" Content="0" Click="Zero_Click"/>
+        <Button x:Name="One" Grid.Row="4" Grid.Column="0" Content="1" Click="One_Click"/>
+        <Button x:Name="Two" Grid.Row="4" Grid.Column="1" Content="2" Click="Two_Click"/>
+        <Button x:Name="Three" Grid.Row="4" Grid.Column="2" Content="3" Click="Three_Click"/>
+        <Button x:Name="Four" Grid.Row="3" Grid.Column="0" Content="4" Click="Four_Click"/>
+        <Button x:Name="Five" Grid.Row="3" Grid.Column="1" Content="5" Click="Five_Click"/>
+        <Button x:Name="Six" Grid.Row="3" Grid.Column="2" Content="6" Click="Six_Click"/>
+        <Button x:Name="Seven" Grid.Row="2" Grid.Column="0" Content="7" Click="Seven_Click"/>
+        <Button x:Name="Eight" Grid.Row="2" Grid.Column="1" Content="8" Click="Eight_Click"/>
+        <Button x:Name="Nine" Grid.Row="2" Grid.Column="2" Content="9" Click="Nine_Click"/>
+
+        <Button x:Name="Dot" Grid.Row="5" Grid.Column="2" Content="." Click="Dot_Click"/>
+        <Button x:Name="Sign" Grid.Row="5" Grid.Column="0" Content="-/+" Click="Sign_Click"/>
+
+        <Button x:Name="CEButton" Grid.Row="1" Grid.Column="0" Content="CE" Click="CEButton_Click"/>
+        <Button x:Name="CButton" Grid.Row="1" Grid.Column="1" Content="C" Click="CButton_Click"/>
+        <Button x:Name="Sqrt" Grid.Row="1" Grid.Column="2" Content="√" Click="Sqrt_Click"/>
+
+        <Button x:Name="Equality" Grid.Row="5" Grid.Column="3" Content="=" Click="Equality_Click"/>
+        <Button x:Name="Summation" Grid.Row="4" Grid.Column="3" Content="+" Click="Summation_Click"/>
+        <Button x:Name="Subtraction" Grid.Row="3" Grid.Column="3" Content="-" Click="Subtraction_Click"/>
+        <Button x:Name="Division" Grid.Row="2" Grid.Column="3" Content="/" Click="Division_Click"/>
+        <Button x:Name="Multiplication" Grid.Row="1" Grid.Column="3" Content="*" Click="Multiplication_Click"/>
     </Grid>
 </Window>
