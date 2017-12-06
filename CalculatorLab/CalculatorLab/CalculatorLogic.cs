@@ -10,9 +10,7 @@ namespace CalculatorLab
     {
         public string NumberOnScreen { get { return (_numberOnScreen*_sign).ToString("G10"); } }
 
-        private delegate double OperationDelegate(double x, double y);
-
-        private OperationDelegate Operation = Sum;
+        private Func<double,double,double> Operation = Sum;
 
         private double _numberOnScreen = 0;
 
@@ -135,12 +133,12 @@ namespace CalculatorLab
             _sign *= -1;
         }
 
-        private static double Sum(double x, double y) => x + y;
+        private static Func<double, double, double> Sum = (x, y) => x + y;
 
-        private static double Mul(double x, double y) => x * y;
+        private static Func<double, double, double> Mul = (x, y) => x * y;
 
-        private static double Div(double x, double y) => x / y;
+        private static Func<double, double, double> Div = (x, y) => x / y;
 
-        private static double Sub(double x, double y) => x - y;
+        private static Func<double, double, double> Sub = (x, y) => x - y;
     }
 }
