@@ -13,7 +13,6 @@ namespace PocketBook.Model
         }
 
         public DbSet<Note> Notes { get; set; }
-        public DbSet<Telephone> Telephones { get; set; }
-        public DbSet<EMail> EMails { get; set; }
+
     }
 }

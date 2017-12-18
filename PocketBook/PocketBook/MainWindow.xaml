@@ -4,17 +4,60 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PocketBook"
+        xmlns:ViewModel="clr-namespace:PocketBook.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <StackPanel>
-        <ListBox ItemsSource="{Binding Notes}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Button Content="+" Command="{Binding AddCommand}" Grid.Column="1" Grid.Row="3" />
+        <ScrollViewer Grid.Row="0" Grid.Column="2" Grid.RowSpan="3">
+            <StackPanel>
+                <ListBox ItemsSource="{Binding Alfavite}" SelectedItem="{Binding SelectedChar}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
+        <TextBox Grid.Column="1" Grid.Row="0" />
+        <ScrollViewer Grid.Column="1" Grid.Row="1">
+            <ListBox ItemsSource="{Binding Notes}" SelectedItem="{Binding SelectedNote}" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+        <ScrollViewer Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+            <StackPanel DataContext="{Binding OutNote, UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock Text="Имя"/>
+                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Дата рождения"/>
+                <DatePicker SelectedDate="{Binding Birthday}"/>
+                <TextBlock Text="EMail"/>
+                <TextBox Text="{Binding EMailString, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Телефон"/>
+                <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Коментарий"/>
+                <TextBox TextWrapping="Wrap"  Text="{Binding Commentary, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Button Content="Сохранить изменения" Grid.Column="0" Command="{Binding ChangeCommand}" Grid.Row="2"/>
+    </Grid>
 </Window>
