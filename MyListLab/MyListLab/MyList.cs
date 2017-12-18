@@ -13,11 +13,11 @@ namespace MyListLab
 
         private MyElement<T> getElementByNumber(int n)
         {
-            MyElement<T> ret = _firstElement;
+            var ret = _firstElement;
             for (int i = 0; i < n; i++)
             {
                 if (ret == null)
-                    break;
+                    throw new IndexOutOfRangeException();
                 ret = ret.Next;
             }
             return ret;
@@ -108,7 +108,7 @@ namespace MyListLab
         {
             int index = IndexOf(item);
             if(index!=-1)
-                RemoveAt(IndexOf(item));
+                RemoveAt(index);
             return index != -1;
         }
 
