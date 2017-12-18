@@ -26,3 +26,6 @@ D:\Repos\LabsDotNet\MyListLab\UnitTestMyList\bin\Debug\Microsoft.VisualStudio.Te
 D:\Repos\LabsDotNet\MyListLab\UnitTestMyList\obj\Debug\UnitTestMyList.csprojResolveAssemblyReference.cache
 D:\Repos\LabsDotNet\MyListLab\UnitTestMyList\obj\Debug\UnitTestMyList.dll
 D:\Repos\LabsDotNet\MyListLab\UnitTestMyList\obj\Debug\UnitTestMyList.pdb
+D:\Repos\LabsDotNet\MyListLab\UnitTestMyList\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+D:\Repos\LabsDotNet\MyListLab\UnitTestMyList\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+D:\Repos\LabsDotNet\MyListLab\UnitTestMyList\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
