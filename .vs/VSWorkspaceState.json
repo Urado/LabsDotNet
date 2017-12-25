@@ -3,8 +3,9 @@
     "",
     "\\CalculatorLab",
     "\\MyListLab",
-    "\\PocketBook"
+    "\\PocketBook",
+    "\\PocketBook\\PocketBook"
   ],
-  "SelectedNode": "\\PocketBook\\PocketBook.sln",
+  "SelectedNode": "\\CalculatorLab\\CalculatorLab.sln",
   "PreviewInSolutionExplorer": false
 }
