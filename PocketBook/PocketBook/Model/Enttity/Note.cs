@@ -30,7 +30,7 @@ namespace PocketBook.Model.Enttity
         }
         public void SetItems(Note Nt)
         {
-            Id = Nt.Id;
+            //Id = Nt.Id;
             Name = Nt.Name;
             Birthday = Nt.Birthday;
             Commentary = Nt.Commentary;

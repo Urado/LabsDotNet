@@ -10,11 +10,36 @@ using System.Collections.ObjectModel;
 using System.Windows.Navigation;
 using PocketBook.Model;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace PocketBook.ViewModel
 {
     class ApplicationViewModel : BaseViewModel
     {
+        public Visibility ContactTrigger
+        {
+            get { return contactTrigger; }
+            set
+            {
+                contactTrigger =value;
+                OnPropertyChanged(nameof(ContactTrigger));
+            }
+        } 
+        private Visibility contactTrigger= Visibility.Visible;
+
+        public Visibility NoteTrigger
+        {
+            get { return noteTrigger; }
+            set
+            {
+                noteTrigger = value;
+                OnPropertyChanged(nameof(NoteTrigger));
+            }
+        }
+        private Visibility noteTrigger = Visibility.Hidden;
+
+        private bool IsNewNote = false;
+
         private RelayCommand addCommand;
         public RelayCommand AddCommand
         {
@@ -23,8 +48,12 @@ namespace PocketBook.ViewModel
                 return addCommand ??
                     (addCommand = new RelayCommand(obj =>
                     {
-                        notes.Add(new Note { Id = Notes.Count, Name = "Игорь" });
-                        RebildNote();
+                        //notes.Add(new Note { Id = Notes.Count, Name = "Игорь" });
+                        //RebildNote();
+                        IsNewNote = true;
+                        OutNote = new Note();
+                        DisableAllPages();
+                        NoteTrigger = Visibility.Visible;
                     }));
             }
         }
@@ -37,8 +66,66 @@ namespace PocketBook.ViewModel
                 return changeCommand ??
                     (changeCommand = new RelayCommand(obj =>
                     {
+                        IsNewNote = false;
                         SaveChangeInNote(outNote);
                         RebildNote();
+
+                        DisableAllPages();
+                        ContactTrigger = Visibility.Visible;
+                    }));
+            }
+        }
+
+        private RelayCommand backCommand;
+        public RelayCommand BackCommand
+        {
+            get
+            {
+                return backCommand ??
+                    (backCommand = new RelayCommand(obj =>
+                    {
+
+
+                        if (IsNewNote)
+                        {
+                            IsNewNote = false;
+                            var Result = MessageBox.Show("Вы не сохранили контакт. Сохранить?", "Ошибка при вводе имени", MessageBoxButton.YesNoCancel, MessageBoxImage.None);
+                            DisableAllPages();
+                            if (Result == MessageBoxResult.Yes)
+                            {
+                                SaveChangeInNote(outNote);
+                                RebildNote();
+                                ContactTrigger = Visibility.Visible;
+                            }
+                            else if (Result == MessageBoxResult.Cancel)
+                            {
+                                IsNewNote = true;
+                                NoteTrigger = Visibility.Visible;
+                            }
+                            else
+                            {
+                                ContactTrigger = Visibility.Visible;
+                            }
+                        }
+                        else
+                        {
+                            DisableAllPages();
+                            ContactTrigger = Visibility.Visible;
+                        }
+                    }));
+            }
+        }
+
+        private RelayCommand selectCommand;
+        public RelayCommand SelectCommand
+        {
+            get
+            {
+                return selectCommand ??
+                    (selectCommand = new RelayCommand(obj =>
+                    {
+                        DisableAllPages();
+                        NoteTrigger = Visibility.Visible;
                     }));
             }
         }
@@ -51,6 +138,7 @@ namespace PocketBook.ViewModel
                 selectedNote = value;
                 OutNote = new Note(selectedNote);
                 OnPropertyChanged(nameof(SelectedNote));
+                SelectCommand.Execute(null);
             }
         }
         private Note selectedNote = null;
@@ -141,11 +229,12 @@ namespace PocketBook.ViewModel
             notes[1].EMailString = "shkmto@vdv.ru";
             notes[1].Commentary = "пуащшгр укпгрорукпдрлшвапожлрдлджор ва мп олрддл ор вапл орд лор вало рп лор вало рвпалоррваи лодр гвапрва мшд гп вап и ш упр й3лкпиаду шкп";
 
+            /*
             using (var DB = new PocketBookDB())
             {
                 DB.Notes.AddRange(notes);
                 DB.SaveChangesAsync();
-            }
+            }*/
 
             Notes = new ObservableCollection<Note>();
 
@@ -158,13 +247,27 @@ namespace PocketBook.ViewModel
         public void SaveChangeInNote(Note note)
         {
             var concreteNote=notes.FirstOrDefault(n => n.Id == note.Id);
-            concreteNote.SetItems(note);
+            if (concreteNote != null)
+                concreteNote.SetItems(note);
+            else
+                notes.Add(note);
+            /*
             using (var DB = new PocketBookDB())
             {
-                concreteNote = notes.FirstOrDefault(n => n.Id == note.Id);
-                concreteNote.SetItems(note);
+                concreteNote = DB.Notes.FirstOrDefault(n => n.Id == note.Id);
+                if (concreteNote != null)
+                    concreteNote.SetItems(note);
+                else
+                    DB.Notes.Add(note);
                 DB.SaveChangesAsync();
             }
+            */
+        }
+
+        private void DisableAllPages()
+        {
+            ContactTrigger = Visibility.Hidden;
+            NoteTrigger = Visibility.Hidden;
         }
     }
 }
